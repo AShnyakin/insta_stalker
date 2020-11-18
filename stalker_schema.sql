@@ -6,9 +6,6 @@ CREATE  TABLE insta_stalker.tag (
 	CONSTRAINT pk_tags_id PRIMARY KEY ( tag_id )
  );
 
-CREATE  TABLE insta_stalker.tbl ( 
- );
-
 CREATE  TABLE insta_stalker."user" ( 
 	user_id              bigint  NOT NULL ,
 	name                 varchar(100)   ,
@@ -20,8 +17,8 @@ CREATE  TABLE insta_stalker."user" (
 
 CREATE  TABLE insta_stalker.follower_map ( 
 	follower_id          bigint  NOT NULL ,
-	user_id              bigint   ,
-	CONSTRAINT pk_follower_map_id PRIMARY KEY ( follower_id )
+	user_id              bigint  NOT NULL ,
+	CONSTRAINT pk_follower_map_user_id PRIMARY KEY ( user_id )
  );
 
 CREATE  TABLE insta_stalker.post ( 
